@@ -157,3 +157,23 @@ boutonImpression.addEventListener('click', function() {
     nouvelOnglet.print();
   };
 });
+
+
+// Récupérer le bouton par son ID
+var boutonTelechargement = document.getElementById('mon-bouton2');
+
+// Ajouter un gestionnaire d'événement au clic sur le bouton
+boutonTelechargement.addEventListener('click', function() {
+  // Créer un lien de téléchargement
+  var lienTelechargement = document.createElement('a');
+
+  // Définir l'URL du fichier à télécharger
+  lienTelechargement.href = './imgs/cv_LEDUCQ_Cyril2.pdf'; // Remplacez par le chemin de votre CV
+
+  // Spécifier le nom du fichier à télécharger
+  lienTelechargement.download = 'cv_LEDUCQ_Cyril2.pdf'; // Remplacez par le nom souhaité pour le fichier téléchargé
+
+  // Simuler un clic sur le lien de téléchargement
+  lienTelechargement.click();
+});
+
