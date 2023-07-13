@@ -134,3 +134,14 @@ function initMap() {
       ]
     });
 }
+document.getElementById("mon-bouton").addEventListener("click", function() {
+  var printWindow = window.open("", "_blank");
+  printWindow.document.write('<html><head><title>CV</title></head><body><img src="./imgs/cv_LEDUCQ_Cyril2.png" style="width: 100%;"></body></html>');+
+  printWindow.document.close();
+  printWindow.onload = function () {
+    printWindow.print();
+    printWindow.onafterprint = function(){
+      printWindow.close();
+    };
+  };
+});
