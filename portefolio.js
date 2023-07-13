@@ -166,7 +166,7 @@ function downloadCV() {
   // Crée un élément <a> invisible
   var link = document.createElement('a');
   link.href = imageURL;
-  link.download = 'CV_CyrilLeducq.pdf';
+  link.download = 'CV_CyrilLeducqcouleur.pdf';
 
   // Ajoute l'élément <a> à la page et le déclencher pour le téléchargement
   document.body.appendChild(link);
