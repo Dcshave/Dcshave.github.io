@@ -134,14 +134,26 @@ function initMap() {
       ]
     });
 }
-document.getElementById("mon-bouton").addEventListener("click", function() {
-  var printWindow = window.open("", "_blank");
-  printWindow.document.write('<html><head><title>CV</title></head><body><img src="./imgs/cv_LEDUCQ_Cyril2.png" style="width: 100%;"></body></html>');+
-  printWindow.document.close();
-  printWindow.onload = function () {
-    printWindow.print();
-    printWindow.onafterprint = function(){
-      printWindow.close();
-    };
+// Récupérer le bouton par son ID
+var boutonImpression = document.getElementById('mon-bouton');
+
+// Ajouter un gestionnaire d'événement au clic sur le bouton
+boutonImpression.addEventListener('click', function() {
+  // Ouvrir un nouvel onglet
+  var nouvelOnglet = window.open();
+
+  // Créer une balise d'image dans le nouvel onglet
+  var img = nouvelOnglet.document.createElement('img');
+
+  // Définir l'URL de l'image
+  img.src = './imgs/cv_LEDUCQ_Cyril2.png'; // Remplacez par le chemin de votre image
+
+  // Ajouter l'image au document du nouvel onglet
+  nouvelOnglet.document.body.appendChild(img);
+
+  // Attendre que l'image soit chargée avant d'appeler la fonction d'impression
+  img.onload = function() {
+    // Appeler la fonction d'impression dans le nouvel onglet
+    nouvelOnglet.print();
   };
 });
