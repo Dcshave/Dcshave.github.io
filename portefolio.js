@@ -146,7 +146,7 @@ boutonImpression.addEventListener('click', function() {
   var img = nouvelOnglet.document.createElement('img');
 
   // Définir l'URL de l'image
-  img.src = './imgs/cv_LEDUCQ_Cyril2.png'; // Remplacez par le chemin de votre image
+  img.src = './imgs/cv_LEDUCQ_Cyrilcouleur.jpg'; // Remplacez par le chemin de votre image
 
   // Ajouter l'image au document du nouvel onglet
   nouvelOnglet.document.body.appendChild(img);
@@ -159,21 +159,17 @@ boutonImpression.addEventListener('click', function() {
 });
 
 
-// Récupérer le bouton par son ID
-var boutonTelechargement = document.getElementById('mon-bouton2');
+function downloadCV() {
+  // Chemin vers  image de CV
+  var imageURL = './imgs/cv_LEDUCQ_Cyrilcouleur.pdf';
 
-// Ajouter un gestionnaire d'événement au clic sur le bouton
-boutonTelechargement.addEventListener('click', function() {
-  // Créer un lien de téléchargement
-  var lienTelechargement = document.createElement('a');
+  // Crée un élément <a> invisible
+  var link = document.createElement('a');
+  link.href = imageURL;
+  link.download = 'mon_cv.jpg';
 
-  // Définir l'URL du fichier à télécharger
-  lienTelechargement.href = './imgs/cv_LEDUCQ_Cyril2.pdf'; // Remplacez par le chemin de votre CV
-
-  // Spécifier le nom du fichier à télécharger
-  lienTelechargement.download = 'cv_LEDUCQ_Cyril2.pdf'; // Remplacez par le nom souhaité pour le fichier téléchargé
-
-  // Simuler un clic sur le lien de téléchargement
-  lienTelechargement.click();
-});
-
+  // Ajoute l'élément <a> à la page et le déclencher pour le téléchargement
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
