@@ -146,7 +146,7 @@ boutonImpression.addEventListener('click', function() {
   var img = nouvelOnglet.document.createElement('img');
 
   // Définir l'URL de l'image
-  img.src = './imgs/cv_LEDUCQ_Cyrilcouleur.pdf'; // Remplacez par le chemin de votre image
+  img.src = './imgs/cv_LEDUCQ_Cyrilcouleur.jpg'; // Remplacez par le chemin de votre image
 
   // Ajouter l'image au document du nouvel onglet
   nouvelOnglet.document.body.appendChild(img);
